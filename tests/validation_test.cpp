@@ -30,10 +30,11 @@ INSTANTIATE_TEST_SUITE_P(SimpleTest,
                           std::make_pair("a", std::vector<std::string>{"caracter END unexpected"}),
                           std::make_pair("aaaaaabbbbbb", std::vector<std::string>()),
                           std::make_pair("ab", std::vector<std::string>()),
-                          std::make_pair("ba", std::vector<std::string>{"caracter b unexpected"}),
+                          std::make_pair("ba", std::vector<std::string>{"caracter b unexpected", "caracter a unexpected"}),
                           std::make_pair("", std::vector<std::string>{"caracter END unexpected", "caracter END unexpected"}),
-                          std::make_pair("d", std::vector<std::string>{"caracter d unexpected", "caracter d unexpected"}),
-                          std::make_pair("ac", std::vector<std::string>{"caracter c unexpected"})
+                          std::make_pair("d", std::vector<std::string>{"caracter d unexpected", "caracter d unexpected", "caracter d unexpected"}),
+                          std::make_pair("ac", std::vector<std::string>{"caracter c unexpected", "caracter c unexpected"}),
+                          std::make_pair("aba", std::vector<std::string>{"caracter a unexpected"})
                          ));
 
 int main(int argc, char** argv) {

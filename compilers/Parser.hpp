@@ -49,7 +49,7 @@ class Parser {
   std::vector<std::string> parse() {
     S();
 
-    //expect(Categoria::END);
+    expect(Categoria::END);
     return errors;
 
     // if( scanner.query_token()._atributo == Categoria::END 
