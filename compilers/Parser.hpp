@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include "FlexScanner.hpp"
 #include "Token.hpp"
 
@@ -8,56 +9,57 @@ namespace compilers {
 
 // Grammar:
 // S -> AB
-// A -> aA | a
-// B -> bB | b
+// A -> aA | a      ===>    a [A]
+// B -> bB | b      ===>    b [B]
 
 class Parser {
  public:
   Parser(std::istream& arg_yyin, std::ostream& arg_yyout) : scanner(arg_yyin, arg_yyout) {}
   
-  bool A() {
+  void expect(Categoria cat_expected){
     auto token = scanner.query_token();
-    if( token._atributo == Categoria::A ){
-        scanner.get_token();
-    } else {
-        return false; //error
-    }
-
-    while( 1 ){
-        token = scanner.query_token();
-
-        if(token._atributo == Categoria::A){
-            scanner.get_token();
-        } else if(token._atributo == Categoria::B){
-            return true;
-        } else {
-            return false; //error
-        }
+    if (token._atributo == cat_expected){
+      scanner.get_token();
+    } else{
+      errors.push_back("caracter " + token._lexema + " unexpected");
     }
   }
 
-  bool B() {
-    auto token = scanner.get_token();
-    if( token._atributo == Categoria::B ){
-        return B();
-    }
-    else if( token._atributo == Categoria::END ){
-        return true;
-    }
-    else {
-        return false; //error
+  void A() {
+    expect(Categoria::A);
+
+    if( scanner.query_token()._atributo == Categoria::A ){
+        A();
     }
   }
 
-  bool S(){
-    return A() && B();
+  void B() {
+    expect(Categoria::B);
+
+    if( scanner.query_token()._atributo == Categoria::B ){
+        B();
+    }
   }
 
-  bool parse() {
-    return S();
+  void S(){
+    A();
+    B();
+  }
+
+  std::vector<std::string> parse() {
+    S();
+
+    //expect(Categoria::END);
+    return errors;
+
+    // if( scanner.query_token()._atributo == Categoria::END 
+    //   && errors.empty())
+    //   return true;
+    // return false;
   }
 
  private:
+  std::vector<std::string> errors;
   FlexScanner scanner;
 };
 

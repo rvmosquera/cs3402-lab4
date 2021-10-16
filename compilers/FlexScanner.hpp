@@ -16,13 +16,13 @@ class FlexScanner : public yyFlexLexer {
       : yyFlexLexer(arg_yyin, arg_yyout) {}
 
   Token query_token(){
-    if(last_token._lexema == "")
+    if(last_token._lexema == "END")
       last_token = get_token();
     return last_token;
   }
 
   Token get_token() {
-    if(last_token._lexema != ""){
+    if(last_token._lexema != "END"){
       Token token_copy = last_token;
       last_token = Token();
       return token_copy;

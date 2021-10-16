@@ -6,45 +6,35 @@
 
 using namespace utec::compilers;
 
+class ParamTest : public testing::TestWithParam<std::pair<std::string, std::vector<std::string>>> {
+};
+
 // Grammar:
 // S -> AB
 // A -> aA | a
 // B -> bB | b
 
-TEST(SimpleTest, basicTest) {
-  std::istrstream str("aaaaaab");
+TEST_P(ParamTest, basicTest) {
+  std::istrstream str(GetParam().first.c_str());
 
   Parser parser(str, std::cout);
-  EXPECT_TRUE(parser.parse());
+  EXPECT_EQ(parser.parse(), GetParam().second);
 }
 
-TEST(SimpleTest2, basicTest2) {
-  std::istrstream str("b");
-
-  Parser parser(str, std::cout);
-  EXPECT_FALSE(parser.parse());
-}
-
-TEST(SimpleTest2, basicTest4) {
-  std::istrstream str("a");
-
-  Parser parser(str, std::cout);
-  EXPECT_FALSE(parser.parse());
-}
-
-TEST(SimpleTest3, basicTest3) {
-  std::istrstream str("aaaaaabbbbbb");
-
-  Parser parser(str, std::cout);
-  EXPECT_TRUE(parser.parse());
-}
-
-TEST(SimpleTest3, basicTest5) {
-  std::istrstream str("ab");
-
-  Parser parser(str, std::cout);
-  EXPECT_TRUE(parser.parse());
-}
+INSTANTIATE_TEST_SUITE_P(SimpleTest,
+                         ParamTest,
+                         testing::Values(
+                          std::make_pair("aaaaaab", std::vector<std::string>()),
+                          std::make_pair("abbbbbb", std::vector<std::string>()),
+                          std::make_pair("b", std::vector<std::string>{"caracter b unexpected"}),
+                          std::make_pair("a", std::vector<std::string>{"caracter END unexpected"}),
+                          std::make_pair("aaaaaabbbbbb", std::vector<std::string>()),
+                          std::make_pair("ab", std::vector<std::string>()),
+                          std::make_pair("ba", std::vector<std::string>{"caracter b unexpected"}),
+                          std::make_pair("", std::vector<std::string>{"caracter END unexpected", "caracter END unexpected"}),
+                          std::make_pair("d", std::vector<std::string>{"caracter d unexpected", "caracter d unexpected"}),
+                          std::make_pair("ac", std::vector<std::string>{"caracter c unexpected"})
+                         ));
 
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);

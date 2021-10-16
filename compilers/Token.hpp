@@ -12,7 +12,7 @@ class Token {
   Token(std::string lexema, Categoria atributo)
       : _lexema(lexema), _atributo(atributo) {}
 
-  Token() : _lexema(""), _atributo(END) {}
+  Token() : _lexema("END"), _atributo(END) {}
 
   bool operator==(const Token& in) const {
     return in._lexema == this->_lexema && in._atributo == this->_atributo;
