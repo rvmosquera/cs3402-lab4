@@ -1,3 +1,4 @@
 #pragma once
 
-enum Categoria { A = 255, B, ERROR, END };
+enum Categoria { A = 255, B, ERROR, NUMERO= 251, EXP, OPSUMA= 253, OPREST= 254, 
+TERM, OPMULT= 256, FACTOR, PAREN_L= 258, PAREN_R= 259, END };

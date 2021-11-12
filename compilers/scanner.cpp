@@ -1,6 +1,6 @@
-#line 2 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.cpp"
+#line 2 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.cpp"
 
-#line 4 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.cpp"
+#line 4 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -314,8 +314,8 @@ int yyFlexLexer::yywrap() { return 1; }
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 6
-#define YY_END_OF_BUFFER 7
+#define YY_NUM_RULES 9
+#define YY_END_OF_BUFFER 10
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -323,9 +323,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[10] =
+static const flex_int16_t yy_accept[15] =
     {   0,
-        0,    0,    7,    5,    4,    3,    1,    2,    0
+        0,    0,   10,    9,    8,    7,    5,    6,    4,    2,
+        3,    1,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -333,13 +334,13 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    4,
+        5,    6,    7,    1,    8,    1,    1,    9,    9,    9,
+        9,    9,    9,    9,    9,    9,    9,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    4,    5,    1,    1,
 
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -360,31 +361,35 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[6] =
+static const YY_CHAR yy_meta[10] =
     {   0,
-        1,    1,    1,    1,    1
+        1,    1,    1,    1,    1,    1,    1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[10] =
+static const flex_int16_t yy_base[15] =
     {   0,
-        0,    0,    6,    7,    7,    7,    7,    7,    7
+        0,    0,   14,   15,   15,   15,   15,   15,   15,    4,
+        3,    2,    1,   15
     } ;
 
-static const flex_int16_t yy_def[10] =
+static const flex_int16_t yy_def[15] =
     {   0,
-        9,    1,    9,    9,    9,    9,    9,    9,    0
+       14,    1,   14,   14,   14,   14,   14,   14,   14,   14,
+       14,   14,   14,    0
     } ;
 
-static const flex_int16_t yy_nxt[13] =
+static const flex_int16_t yy_nxt[25] =
     {   0,
-        4,    5,    6,    7,    8,    9,    3,    9,    9,    9,
-        9,    9
+        4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
+       13,   13,   13,   14,    3,   14,   14,   14,   14,   14,
+       14,   14,   14,   14
     } ;
 
-static const flex_int16_t yy_chk[13] =
+static const flex_int16_t yy_chk[25] =
     {   0,
-        1,    1,    1,    1,    1,    3,    9,    9,    9,    9,
-        9,    9
+        1,    1,    1,    1,    1,    1,    1,    1,    1,   13,
+       12,   11,   10,    3,   14,   14,   14,   14,   14,   14,
+       14,   14,   14,   14
     } ;
 
 /* The intent behind this definition is that it'll catch
@@ -394,11 +399,11 @@ static const flex_int16_t yy_chk[13] =
 #define yymore() yymore_used_but_not_detected
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
-#line 1 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
-#line 2 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
+#line 1 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+#line 2 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
 #include "Enums.h"
-#line 401 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.cpp"
-#line 402 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.cpp"
+#line 406 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.cpp"
+#line 407 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.cpp"
 
 #define INITIAL 0
 
@@ -530,9 +535,13 @@ YY_DECL
 		}
 
 	{
-#line 7 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
+#line 8 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
 
-#line 536 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.cpp"
+#line 10 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+    /*"a" return Categoria::A;*/
+     /*"b" return Categoria::B;*/
+
+#line 545 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -559,13 +568,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 10 )
+				if ( yy_current_state >= 15 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 7 );
+		while ( yy_base[yy_current_state] != 15 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -591,36 +600,52 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
-return Categoria::A;
+#line 13 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+return Categoria::NUMERO;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
-return Categoria::B;
+#line 15 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+return Categoria::OPSUMA;
 	YY_BREAK
 case 3:
-/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 11 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
-return Categoria::END;
+#line 16 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+return Categoria::OPREST;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 12 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
-
+#line 17 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+return Categoria::OPMULT;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 13 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
-return Categoria::ERROR;
+#line 18 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+return Categoria::PAREN_L;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 15 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
+#line 19 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+return Categoria::PAREN_R;
+	YY_BREAK
+case 7:
+/* rule 7 can match eol */
+YY_RULE_SETUP
+#line 21 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+return Categoria::END;
+	YY_BREAK
+case 8:
+YY_RULE_SETUP
+#line 22 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
+
+	YY_BREAK
+/*.   return Categoria::ERROR;*/
+case 9:
+YY_RULE_SETUP
+#line 24 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
 ECHO;
 	YY_BREAK
-#line 624 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.cpp"
+#line 649 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1037,7 +1062,7 @@ int yyFlexLexer::yy_get_next_buffer()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 10 )
+			if ( yy_current_state >= 15 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1065,11 +1090,11 @@ int yyFlexLexer::yy_get_next_buffer()
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 10 )
+		if ( yy_current_state >= 15 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 9);
+	yy_is_jam = (yy_current_state == 14);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1583,6 +1608,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 15 "/home/romeluko/workspace/cs3402-lab3/compilers/scanner.l"
+#line 24 "/home/rvmosq/Dropbox/Educacion/UTEC/Compilators/cs3402-lab4/compilers/scanner.l"
 
 

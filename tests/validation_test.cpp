@@ -24,17 +24,10 @@ TEST_P(ParamTest, basicTest) {
 INSTANTIATE_TEST_SUITE_P(SimpleTest,
                          ParamTest,
                          testing::Values(
-                          std::make_pair("aaaaaab", std::vector<std::string>()),
-                          std::make_pair("abbbbbb", std::vector<std::string>()),
-                          std::make_pair("b", std::vector<std::string>{"caracter b unexpected"}),
-                          std::make_pair("a", std::vector<std::string>{"caracter END unexpected"}),
-                          std::make_pair("aaaaaabbbbbb", std::vector<std::string>()),
-                          std::make_pair("ab", std::vector<std::string>()),
-                          std::make_pair("ba", std::vector<std::string>{"caracter b unexpected", "caracter a unexpected"}),
-                          std::make_pair("", std::vector<std::string>{"caracter END unexpected", "caracter END unexpected"}),
-                          std::make_pair("d", std::vector<std::string>{"caracter d unexpected", "caracter d unexpected", "caracter d unexpected"}),
-                          std::make_pair("ac", std::vector<std::string>{"caracter c unexpected", "caracter c unexpected"}),
-                          std::make_pair("aba", std::vector<std::string>{"caracter a unexpected"})
+                          std::make_pair("34 - 3 * 42", std::vector<std::string>{"-92"}) ,
+                          //std::make_pair("b", std::vector<std::string>{"caracter b unexpected"}),
+                          std::make_pair("(34 - 3) * 42", std::vector<std::string>{"1302"}) ,
+                          std::make_pair("34 - 3 - 42", std::vector<std::string>{"-11"})
                          ));
 
 int main(int argc, char** argv) {
